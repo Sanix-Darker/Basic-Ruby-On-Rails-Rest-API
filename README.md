@@ -79,6 +79,11 @@ The `create`, `update` and `delete` actions can only be executed by users author
 $ curl -X POST -H 'Content-type: application/json' -d '{"title": "My title", "content": "My content"}' localhost:3000/posts
 ```
 
+**Get all posts**:
+``shell
+curl -H "Authorization: Bearer <auth_token>" http://localhost:3000/posts
+``
+
 **Create a new comment**:
 
 ```console
