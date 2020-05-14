@@ -4,31 +4,31 @@
 
 **Install all gems**:
 
-```console
+```shell
 $ bundle install
 ```
 
 **Update the database with new data model**:
 
-```console
+```shell
 $ rake db:migrate
 ```
 
 **Feed the database with default seeds**:
 
-```console
+```shell
 $ rake db:seed
 ```
 
 **Start the web server on `http://localhost:3000` by default**:
 
-```console
+```shell
 $ rails server
 ```
 
 **Run all RSpec tests and Rubocop**:
 
-```console
+```shell
 $ rake test
 ```
 
@@ -55,13 +55,13 @@ $ rake test
 
 **Create a new user**:
 
-```console
+```shell
 $ curl -X POST -H 'Content-type: application/json' -d '{"email": "testuser@email.com", "password": "testuser123"}' localhost:3000/register
 ```
 
 **Authenticate a user**:
 
-```console
+```shell
 $ curl -X POST -H 'Content-type: application/json' -d '{"email": "testuser@email.com", "password": "testuser123"}' localhost:3000/login
 ```
 
@@ -75,7 +75,7 @@ The `create`, `update` and `delete` actions can only be executed by users author
 
 **Create a new post**:
 
-```console
+```shell
 $ curl -X POST -H 'Content-type: application/json' -d '{"title": "My title", "content": "My content"}' localhost:3000/posts
 ```
 
@@ -86,7 +86,7 @@ curl -H "Authorization: Bearer <auth_token>" http://localhost:3000/posts
 
 **Create a new comment**:
 
-```console
+```shell
 $ curl -X POST -H 'Content-type: application/json' -d '{"name": "Sanix", "message": "My message"}' localhost:3000/posts/1/comments
 ```
 
@@ -94,19 +94,19 @@ The `name` field is optional with default value `anonym`.
 
 **Update an existing post by id**:
 
-```console
+```shell
 $ curl -X PUT -H 'Content-type: application/json' -d '{"title": "My new title", "content": "My new content"}' localhost:3000/posts/1
 ```
 
 **Update an existing comment by id**:
 
-```console
+```shell
 $ curl -X PUT -H 'Content-type: application/json' -d '{"name": "Sanix", "message": "My new message"}' localhost:3000/posts/2/comments/1
 ```
 
 **Delete an existing post by id**:
 
-```console
+```shell
 $ curl -X DELETE localhost:3000/posts/1
 ```
 
@@ -114,6 +114,6 @@ All the comments of this post will be deleted as well.
 
 **Delete an existing comment by id**:
 
-```console
+```shell
 $ curl -X DELETE localhost:3000/posts/2/comments/1
 ```
