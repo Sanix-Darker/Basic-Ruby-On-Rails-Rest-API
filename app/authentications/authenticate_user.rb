@@ -11,12 +11,12 @@ class AuthenticateUser
   end
 
   private
+    def user
+      user = User.find_by!(email: @email)
+      return user if user&.authenticate(@password)
 
-  def user
-    user = User.find_by!(email: @email)
-    return user if user&.authenticate(@password)
+      errors.add(:user_authentication, "Invalid Credentials")
+      return nil
+    end
 
-    errors.add(:user_authentication, "Invalid Credentials")
-    return nil
-  end
 end

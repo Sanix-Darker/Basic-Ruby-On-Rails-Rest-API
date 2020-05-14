@@ -35,15 +35,15 @@ class CommentsController < ApplicationController
 
   private
 
-  def comment_params
-    params.permit(:name, :message)
-  end
+    def comment_params
+      params.permit(:name, :message)
+    end
 
-  def get_post
-    @post = Post.find(params[:post_id])
-  end
+    def get_post
+      @post = Post.find(params[:post_id])
+    end
 
-  def get_comment
-    @comment = @post.comments.find(params[:id]) if @post
-  end
+    def get_comment
+      @comment = @post.comments.find(params[:id]) if @post
+    end
 end
